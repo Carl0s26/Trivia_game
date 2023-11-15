@@ -16,6 +16,7 @@ public class trivia_game {
         for (String q : choosed_questions) {
             if (q.equals(String.valueOf(random_int))) {
                 random_int = random.nextInt(20);
+                question_repeter(random_int, choosed_questions, random);
             }
             else {
                 break;
@@ -29,7 +30,6 @@ public class trivia_game {
         Random random = new Random();
         Scanner Satoru_gojo = new Scanner(System.in);
         boolean While = true;
-        boolean While_two = true;
         int random_int = 0;
         int questions_chossen = 0;
         String user_choice;
@@ -45,15 +45,7 @@ public class trivia_game {
         do {
             random_int = random.nextInt(20);
 
-            for (String q : choosed_questions) {
-                if (q.equals(String.valueOf(random_int))) {
-                    random_int = random.nextInt(20);
-                    question_repeter(random_int, choosed_questions, random);
-                }
-                else {
-                    break;
-                }
-            }
+            question_repeter(random_int, choosed_questions, random);
 
             switch (random_int) {
                 default:
@@ -75,10 +67,11 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
+                    break;
                 case 1:
                     questions_chossen += 1;
                     choosed_questions.add("1");
-                    System.out.println("Is 11th the best class of softwere development?");
+                    System.out.println("Is 11th the best grade of softwere development?");
                     user_choice = Satoru_gojo.nextLine();
                     while (!user_choice.equals("yes") & !user_choice.equals("no")) {
                         System.out.println("Please answer with a yes or no.");
@@ -92,6 +85,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
+                    break;
                 case 2:
                     questions_chossen += 1;
                     choosed_questions.add("2");
@@ -109,6 +103,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
+                    break;
                 case 3:
                     questions_chossen += 1;
                     choosed_questions.add("3");
@@ -127,6 +122,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
+                    break;
                 case 4:
                     questions_chossen += 1;
                     choosed_questions.add("4");
@@ -144,6 +140,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
+                    break;
                 case 5:
                     questions_chossen += 1;
                     choosed_questions.add("5");
@@ -160,7 +157,7 @@ public class trivia_game {
                     } else if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
-                    }
+                    }break;
                 case 6:
                     questions_chossen += 1;
                     choosed_questions.add("6");
@@ -177,7 +174,7 @@ public class trivia_game {
                     } else if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
-                    }
+                    }break;
                 case 7:
                     questions_chossen += 1;
                     choosed_questions.add("7");
@@ -194,8 +191,7 @@ public class trivia_game {
                     } else if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
-                    }
-
+                    }break;
                 case 8:
                     questions_chossen += 1;
                     choosed_questions.add("8");
@@ -213,7 +209,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 9:
                     questions_chossen += 1;
                     choosed_questions.add("9");
@@ -231,7 +227,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 10:
                     questions_chossen += 1;
                     choosed_questions.add("10");
@@ -249,7 +245,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 11:
                     questions_chossen += 1;
                     choosed_questions.add("11");
@@ -267,7 +263,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 12:
                     questions_chossen += 1;
                     choosed_questions.add("12");
@@ -285,11 +281,11 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 13:
                     questions_chossen += 1;
                     choosed_questions.add("13");
-                    System.out.println("Question 1");
+                    System.out.println("The first color of the rainbow is red");
                     user_choice = Satoru_gojo.nextLine();
                     while (!user_choice.equals("yes") & !user_choice.equals("no")) {
                         System.out.println("Please answer with a yes or no.");
@@ -303,11 +299,11 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 14:
                     questions_chossen += 1;
                     choosed_questions.add("14");
-                    System.out.println("Question 1");
+                    System.out.println("Don Quixote is the world's most famous book");
                     user_choice = Satoru_gojo.nextLine();
                     while (!user_choice.equals("yes") & !user_choice.equals("no")) {
                         System.out.println("Please answer with a yes or no.");
@@ -321,11 +317,11 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 15:
                     questions_chossen += 1;
                     choosed_questions.add("15");
-                    System.out.println("Question 1");
+                    System.out.println("Mufasa is the name of the villain in \"The Lion King\" movie.");
                     user_choice = Satoru_gojo.nextLine();
                     while (!user_choice.equals("yes") & !user_choice.equals("no")) {
                         System.out.println("Please answer with a yes or no.");
@@ -339,11 +335,11 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 16:
                     questions_chossen += 1;
                     choosed_questions.add("16");
-                    System.out.println("Question 1");
+                    System.out.println("The first character introduced by marvel was Captain America");
                     user_choice = Satoru_gojo.nextLine();
                     while (!user_choice.equals("yes") & !user_choice.equals("no")) {
                         System.out.println("Please answer with a yes or no.");
@@ -357,7 +353,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 17:
                     questions_chossen += 1;
                     choosed_questions.add("17");
@@ -375,7 +371,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 18:
                     questions_chossen += 1;
                     choosed_questions.add("18");
@@ -393,7 +389,7 @@ public class trivia_game {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
                     }
-
+                    break;
                 case 19:
                     questions_chossen += 1;
                     choosed_questions.add("19");
@@ -410,7 +406,7 @@ public class trivia_game {
                     } else if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
                         System.out.println("Wrong Answer, lets continue.");
-                    }
+                    }break;
             }
         } while (questions_chossen < 10);
 
