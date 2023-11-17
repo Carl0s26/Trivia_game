@@ -4,27 +4,27 @@ import java.util.Scanner;
 
 public class trivia_game {
 
-    static boolean check_question(int random_int, ArrayList<Integer> choosed_questions) {
-        for (int i = 0; i < choosed_questions.size(); i++) {
-            if (choosed_questions.get(i) == random_int) {
-                return true;
-            }
-        }
-        return false;
-    }
+    // if check_question == true then there is a repeated variable and the question repeater calls itself again after changing the random number making it a infinite loop until it becomes false
 
-    static void question_repeter(int random_int, ArrayList<Integer> choosed_questions, Random random) {
-        for (int i = 0; i < choosed_questions.size(); i++) {
-            if (choosed_questions.get(i) == random_int) {
-                random_int = random.nextInt(20);
-                if (check_question(random_int, choosed_questions) == true) {
-                    question_repeter(random_int, choosed_questions, random);
-                } else {
-                    break;
-                }
-            }
-        }
-    }
+    // static boolean check_question(int random_int, ArrayList<Integer> choosed_questions) {
+    //     for (int i = 0; i < choosed_questions.size(); i++) {
+    //         if (choosed_questions.get(i) == random_int) {
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // static void question_repeter(int random_int, ArrayList<Integer> choosed_questions, Random random) {
+    //     if (choosed_questions.contains(random_int)) {
+    //         random_int = random.nextInt(20);
+    //         if (check_question(random_int, choosed_questions) == true) {
+    //             question_repeter(random_int, choosed_questions, random);
+    //         } else {
+    //             ;
+    //         }
+    //     }
+    // }
 
     public static void main(String[] args) throws Exception {
         Random random = new Random();
@@ -39,9 +39,8 @@ public class trivia_game {
         do {
             random_int = random.nextInt(20);
 
-            question_repeter(random_int, choosed_questions, random);
-
-            switch (random_int) {
+            if (!choosed_questions.contains(random_int)) {
+                switch (random_int) {
                 default:
                     break;
                 case 0:
@@ -55,11 +54,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 1:
@@ -73,11 +78,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 2:
@@ -91,11 +102,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 3:
@@ -110,11 +127,17 @@ public class trivia_game {
                     questions_chossen += 1;
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 4:
@@ -128,11 +151,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 5:
@@ -146,11 +175,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 6:
@@ -164,11 +199,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 7:
@@ -182,11 +223,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 8:
@@ -200,11 +247,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 9:
@@ -218,11 +271,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 10:
@@ -236,11 +295,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 11:
@@ -254,11 +319,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 12:
@@ -272,11 +343,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 13:
@@ -290,11 +367,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 14:
@@ -308,11 +391,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 15:
@@ -326,11 +415,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 16:
@@ -344,11 +439,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 17:
@@ -362,11 +463,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 18:
@@ -380,11 +487,17 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("yes")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("no")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
                 case 19:
@@ -398,14 +511,26 @@ public class trivia_game {
                     }
                     if (user_choice.toLowerCase().equals("no")) {
                         System.out.println("");
-                        System.out.println("Great Answer, lets continue.");
+                        System.out.println("Great Answer");
+                        System.out.println("");
                         user_points += 1;
                     } else if (user_choice.toLowerCase().equals("yes")) {
-                        System.out.println("");
-                        System.out.println("Wrong Answer, lets continue.");
+                        try {
+                            System.out.println("");
+                            throw new RuntimeException("Wrong Answer");
+                        } catch (Exception e) {
+                            System.out.println(e);
+                            System.out.println("");
+                        }
                     }
                     break;
             }
+            }
+            else{
+                random_int = random.nextInt(20);
+            }
+
+            
         } while (questions_chossen <= 10);
 
         System.out.println("Your score was " + user_points);
